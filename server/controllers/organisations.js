@@ -13,6 +13,23 @@ module.exports = (function(){
 					res.redirect('');
 				}
 			});
+		},
+
+		login: function(req,res){
+			organisation.find({},function(err,results){
+				if(err){
+					console.log('error');
+				}else{
+					for(var i=0;i<results.length;i++){
+						if(results[i].email == req.body.email){
+							console.log('found user');
+							res.json(results[i]);
+						}else{
+							console.log('user not found');
+						}
+					}
+				}
+			})
 		}
 	};
 })();

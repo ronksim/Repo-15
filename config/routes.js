@@ -18,6 +18,10 @@ module.exports = function(app){
     app.post('/add_organisation',function(req,res){
     	organisations.add_organisation(req,res)
     });
+
+    app.post('/login',function(req,res){
+     	organisations.login(req,res)
+    });
 }
 
 
