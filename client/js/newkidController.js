@@ -11,11 +11,17 @@
             	callback(output);
         	});        
     	};
+        factory.getKids = function(callback){
+            $http.get('/get_kids').success(function(output){
+                callback(output);
+            });
+        };
     	return factory;
     });
 
     saburiKonnect.controller('newKidController', function($scope,$location,$routeParams, NewKidFactory){
-    	$scope.addKid = function()
+    	// console.log('hi');
+        $scope.addKid = function()
     	{
     		console.log("in controller");
     		NewKidFactory.addKid($scope.newkid);
@@ -25,6 +31,10 @@
     	{
        		$scope.organisations = data;
     	})
+
+        NewKidFactory.getKids(function(data){
+            $scope.kids = data;
+        })
     });
 
 
