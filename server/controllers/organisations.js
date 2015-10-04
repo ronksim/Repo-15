@@ -20,14 +20,21 @@ module.exports = (function(){
 				if(err){
 					console.log('error');
 				}else{
+					var exists = false;
 					for(var i=0;i<results.length;i++){
 						if(results[i].email == req.body.email){
-							console.log('found user');
-							res.json(results[i]);
-						}else{
-							console.log('user not found');
-						}
+							exists = true;
+							var index = i;
+						} 
 					}
+					if (exists) {
+						console.log("found user");
+						res.json(results[index])
+					} else {
+						console.log("use not found");
+						res.json({error: true})
+					}
+
 				}
 			})
 		}

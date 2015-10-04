@@ -23,6 +23,15 @@ module.exports = (function(){
 					res.json(results);
 				}		
 			});
+		},
+		get_kids : function(req,res){
+			kid.find({},function(err,data){
+				if(err){
+					console.log('error');
+				}else{
+					res.json(data);
+				}
+			});
 		}
 	};
 })();
