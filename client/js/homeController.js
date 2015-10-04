@@ -317,7 +317,8 @@ saburiKonnect.controller('homeController', function($scope, $location, NewOrgani
 
 	$scope.register = function()
     {
-    	NewOrganisationFactory.addOrganisation($scope.organisation);
+    	// console.log($scope.sponsor);
+    	NewOrganisationFactory.addSponsor($scope.sponsor);
     };
 
 
@@ -340,13 +341,22 @@ saburiKonnect.controller('homeController', function($scope, $location, NewOrgani
             $http.post('/login', info).success(function(output){
                 // callback(output);
                 if (!output.error) {
-                	$location.path ("/kids")
+                	if(output.status == false){
+                		$location.path ("/kids")
+                	}
+                	else{
+                		$location.path('/newkid')
+                	}
                 }
             });
         };
-    	factory.addOrganisation = function(info,callback){
-        	$http.post('/add_organisation', info).success(function(output){
-            	callback(output);
+    	factory.addSponsor = function(info,callback){
+    		// console.log(info);
+        	$http.post('/add_sponsor', info).success(function(output){
+        		if(output.message == 'success'){
+        			$location.path('/static');
+        		}
+            	
         	});
         };
     	return factory;
