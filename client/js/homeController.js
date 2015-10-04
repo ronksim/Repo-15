@@ -175,7 +175,6 @@ saburiKonnect.controller('homeController', function($scope, $location, NewOrgani
 
     $scope.login = function()
     {
-    	console.log(NewOrganisationFactory);
     	NewOrganisationFactory.login($scope.orgLogin);
 	};
 
@@ -190,7 +189,8 @@ saburiKonnect.controller('homeController', function($scope, $location, NewOrgani
     	var factory = {};
         factory.login = function(info,callback){
             $http.post('/login', info).success(function(output){
-                callback(output);
+            	console.log(output);
+                // callback(output);
             });
         };
     	factory.add_Organisation = function(info,callback){
