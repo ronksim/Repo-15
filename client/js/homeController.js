@@ -198,11 +198,11 @@ saburiKonnect.controller('homeController', function($scope, $location, NewOrgani
 	  });
 
 	  var msft = data.filter(function(d) {
-	    return d.symbol == "MSFT";
+	    return d.symbol == "IBM";
 	  });
 
 	  var ibm = data.filter(function(d) {
-	    return d.symbol == 'IBM';
+	    return d.symbol == 'MSFT';
 	  });
 
 	  // Compute the minimum and maximum date, and the maximum price.
@@ -272,7 +272,7 @@ saburiKonnect.controller('homeController', function($scope, $location, NewOrgani
 
 	  /* Create a shared transition for anything we're animating */
 	  var t = svg.transition()
-	    .delay(750)
+	    .delay(3000)
 	    .duration(6000)
 	    .ease('linear')
 	    .each('end', function() {
@@ -320,6 +320,18 @@ saburiKonnect.controller('homeController', function($scope, $location, NewOrgani
     	// console.log($scope.sponsor);
     	NewOrganisationFactory.addSponsor($scope.sponsor);
     };
+
+
+	$(window).on('scroll', function() {
+	    var y_scroll_pos = window.pageYOffset;
+	    var scroll_pos_test = 800;             // set to whatever you want it to be
+
+	    if(y_scroll_pos > scroll_pos_test) {
+	        $("#chart").hide()
+	    } else {
+			$("#chart").show()
+		}
+	});
 
 })
 

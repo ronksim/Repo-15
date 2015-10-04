@@ -25,7 +25,7 @@ polyline{
 .kids {
     width: 100%;
     margin-top: 40%;
-	margin-bottom: 40%;
+	/*margin-bottom: 40%;*/
     height: 800px;
     z-index: 3;
     background: url(./assets/texture.gif) 50% 0 #fbf9f6
@@ -113,6 +113,9 @@ path.area {
   margin-right: 100px;
   float: right;
 }
+.messageText {
+	margin-top: 150px;
+}
 </style>
 <!-- <button class="randomize">randomize</button> -->
 <nav class="navbar navbar-default">
@@ -164,19 +167,28 @@ path.area {
 		<div class="col-md-4">
 			<img src="./assets/19f9cefdfb07230a68581d617885a3af_XS.jpg">
 			<h3>Palani</h3>
+			<h5 class="kidsDescription">Lives with his father and 1 sister. His parents strugle to provide for the family. His father is a fisherman. Despite his efforts its difficult to meet the family's needs. He is growing up in a poor community in India. A typical home is constructed using wood wit ha thatch roof and dirt floor</h5>
 		</div>
 		<div class="col-md-4">
 			<img src="./assets/imageedit_2_2465428479.jpg">
 			<h3>Mala</h3>
+			<h5 class="kidsDescription">She lives with her parents and her parents struggle to provide for the family. His father is a daily wage earner and her mother is a daily wage earner. Your sponsor helps provide her with the education and tutoring that will help her excel in life.</h5>
 		</div>
 	</div>
+	<div class="row messageText">
+		<h4>Saburi is a sanskrit word that translates to 'patience and perseverance' the qualities needed throughout the path to reach our goal.</h4>
+	</div>
 </div>
-<label class="guideline">
-  Show Guideline & Curtain
-  <input type="checkbox" id="show_guideline" />
-</label>
-<svg id="lineChart"></svg>
-
+<h1>Literacy rate in India</h1>
+<div id="LineChartAbsolute">
+	<svg id="lineChart"></svg>
+</div>
+<nav class="navbar navbar-default navbar-bottom" role="navigation">
+  <div class="container">
+    <h6>"He who has spent has used; he who has collected has lost; but he who has given has saved his treasure forever"</h6>
+	<h5>- Hazrat Inayat Khan</h5>
+  </div>
+</nav>
 <!-- Modal login -->
 <div class="modal fade" id="loginModalSponsor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
