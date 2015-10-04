@@ -25,7 +25,8 @@ polyline{
 .kids {
     width: 100%;
     margin-top: 40%;
-    height: 1000px;
+	margin-bottom: 40%;
+    height: 800px;
     z-index: 3;
     background: url(./assets/texture.gif) 50% 0 #fbf9f6
 }
@@ -42,6 +43,8 @@ polyline{
     position: fixed;
     width: 100%;
     z-index: -1;
+	text-align:right;
+	/*min-width: 1200px;*/
     /*background-color: #d1d1d1;*/
 }
 nav {
@@ -49,6 +52,30 @@ nav {
 }
 .navbar-default {
     background: white;
+}
+.chartText {
+	position: absolute;
+	/*float: right;*/
+	/*clear: both;*/
+	margin-right:50px;
+	margin-left: 800px;
+	/*z-index: -2;*/
+	/*vertical-align: text-middle;*/
+	margin-top: 100px;
+	width: 400px;
+	height: 500px;
+}
+@media screen and (max-width: 1200px) {
+    .chartText {
+        visibility: hidden;
+    }
+}
+.kidsDisplay {
+	margin-top: 50px;
+}
+.kidsDescription {
+	margin-top: 50px;
+	margin: 40px;
 }
 </style>
 <!-- <button class="randomize">randomize</button> -->
@@ -82,10 +109,31 @@ nav {
   <!-- <button type="button" class="btn btn-default">Right</button> -->
 </div>
 <div id="absolute">
-    <div id="chart"></div>
+    <div id="chart">
+		<div class="chartText">
+			<h1>Child Support</h1>
+	        <h3>We sponsor children's education and as we believe in continued education we have plans to provide sponsorship until they grow independent !</h3>
+		</div>
+    </div>
+
 </div>
 <div class="kids">
-    <h1 class="text-center">Kids Supported</h1>
+    <h1 class="text-center kidsTitle">Kids Supported</h1>
+	<div class="row kidsDisplay">
+		<div class="col-md-4">
+			<img src="./assets/6f43b5263fbba79c5962514b85d34738_XS.jpg">
+			<h3>Kalyani</h3>
+			<h5 class="kidsDescription">Lives in a poor community in India, where life is a constant struggle. The $66 her family earns each month barely covers basic necessities — much less things like school uniforms and medicine when she gets sick. But you can help.</h5>
+		</div>
+		<div class="col-md-4">
+			<img src="./assets/19f9cefdfb07230a68581d617885a3af_XS.jpg">
+			<h3>Palani</h3>
+		</div>
+		<div class="col-md-4">
+			<img src="./assets/imageedit_2_2465428479.jpg">
+			<h3>Mala</h3>
+		</div>
+	</div>
 </div>
 <!-- Modal login -->
 <div class="modal fade" id="loginModalSponsor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -126,7 +174,7 @@ nav {
           <label>Address</label>
           <input type="text" ng-model="organisation.address"><br>
           <label>City</label>
-          <input type="text" ng-model="organisation.city"><br>  
+          <input type="text" ng-model="organisation.city"><br>
           <label>State</label>
           <input type="text" ng-model="organisation.state"><br>
           <label>Country</label>
