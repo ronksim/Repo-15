@@ -1,7 +1,16 @@
 saburiKonnect.controller('homeController', function($scope, $location){
 
-	$scope.year = function() {
-		var data = [{label: "2013", value: 1000}, {label: "2014", value: 2500}, {label: "2015", value: 2750}]
+	$scope.thirteen = function() {
+		data = [{label: "age 5-7", value: 1000}, {label: "age 8-10", value: 2500}, {label: "age 11-12", value: 2750}, {label: "age 13-14", value: 2750}, {label: "age 15-17", value: 2750}, {label: "age 18-20", value: 2750}]
+		change(data)
+		// alert("hello")
+	}
+	$scope.fourteen = function() {
+		data = [{label: "age 5-7", value: 1302}, {label: "age 8-10", value: 2300}, {label: "age 11-12", value: 1403}, {label: "age 13-14", value: 2042}, {label: "age 15-17", value: 2750}, {label: "age 18-20", value: 3203}]
+		change(data)
+	}
+	$scope.fifteen = function() {
+		data = [{label: "age 5-7", value: 3921}, {label: "age 8-10", value: 1392}, {label: "age 11-12", value: 2392}, {label: "age 13-14", value: 2042}, {label: "age 15-17", value: 2942}, {label: "age 18-20", value: 1943}]
 		change(data)
 		// alert("hello")
 	}
@@ -50,11 +59,18 @@ saburiKonnect.controller('homeController', function($scope, $location){
 		});
 	}
 
-	change(randomData());
+	// change(randomData());
+	var data = [{label: "age 5-7", value: 0}, {label: "age 8-10", value: 1}, {label: "age 11-12", value: 0}, {label: "age 13-14", value: 0}, {label: "age 15-17", value: 0}, {label: "age 18-20", value: 0}]
+	change(data)
+
+	setTimeout(function(){
+		data = [{label: "age 5-7", value: 3921}, {label: "age 8-10", value: 1392}, {label: "age 11-12", value: 2392}, {label: "age 13-14", value: 2042}, {label: "age 15-17", value: 2942}, {label: "age 18-20", value: 1943}]
+		change(data)
+	},500);
 
 	d3.select(".randomize")
 		.on("click", function(){
-			change(randomData());
+			// change(randomData());
 		});
 
 
