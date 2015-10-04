@@ -1,8 +1,9 @@
 saburiKonnect.controller('homeController', function($scope, $location){
 
 	$scope.year = function() {
-		console.log("clicked")
-		alert("hello")
+		var data = [{label: "2013", value: 1000}, {label: "2014", value: 2500}, {label: "2015", value: 2750}]
+		change(data)
+		// alert("hello")
 	}
 
 	var svg = d3.select("#chart")
