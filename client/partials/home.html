@@ -77,6 +77,42 @@ nav {
 	margin-top: 50px;
 	margin: 40px;
 }
+
+
+path.line {
+  fill: none;
+  stroke: #666;
+  stroke-width: 1.5px;
+}
+
+path.area {
+  fill: #e7e7e7;
+}
+
+.axis {
+  shape-rendering: crispEdges;
+}
+
+.x.axis line {
+  stroke: #fff;
+}
+
+.x.axis .minor {
+  stroke-opacity: .5;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.y.axis line, .y.axis path {
+  fill: none;
+  stroke: #000;
+}
+.guideline {
+  margin-right: 100px;
+  float: right;
+}
 </style>
 <!-- <button class="randomize">randomize</button> -->
 <nav class="navbar navbar-default">
@@ -135,6 +171,12 @@ nav {
 		</div>
 	</div>
 </div>
+<label class="guideline">
+  Show Guideline & Curtain
+  <input type="checkbox" id="show_guideline" />
+</label>
+<svg id="lineChart"></svg>
+
 <!-- Modal login -->
 <div class="modal fade" id="loginModalSponsor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
