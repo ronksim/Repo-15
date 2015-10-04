@@ -1,5 +1,6 @@
 // var Controller = require('./../server/controllers/controller.js');
-var kids = require('./../server/controllers/kids.js')
+var kids = require('./../server/controllers/kids.js');
+var organisations = require('./../server/controllers/organisations.js');
 var express = require('express');
 var router = express.Router();
 
@@ -12,6 +13,10 @@ module.exports = function(app){
     app.get('/get_organisations',function(req,res){
     	res.json({name: 'Meera'});
     	// kids.get_organisations(req,res)
+    });
+
+    app.post('/add_organisation',function(req,res){
+    	organisations.add_organisation(req,res)
     });
 }
 

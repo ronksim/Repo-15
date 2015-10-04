@@ -1,4 +1,4 @@
-saburiKonnect.controller('homeController', function($scope, $location){
+saburiKonnect.controller('homeController', function($scope, $location,NewOrganisationFactory){
 
 	$scope.thirteen = function() {
 		data = [{label: "age 5-7", value: 1000}, {label: "age 8-10", value: 2500}, {label: "age 11-12", value: 2750}, {label: "age 13-14", value: 2750}, {label: "age 15-17", value: 2750}, {label: "age 18-20", value: 2750}]
@@ -173,4 +173,32 @@ saburiKonnect.controller('homeController', function($scope, $location){
 	  $('#myInput').focus()
 	})
 
+    $scope.login = function()
+    {
+    	console.log(NewOrganisationFactory);
+    	NewOrganisationFactory.login($scope.orgLogin);
+	};
+
+	$scope.register = function()
+    {
+    	NewOrganisationFactory.addOrganisation($scope.organisation);
+    };
+
 })
+
+   saburiKonnect.factory('NewOrganisationFactory',function($http){
+    	var factory = {};
+        factory.login = function(info,callback){
+            $http.post('/login',info).success(function(output)
+            {
+                callback(output);
+            });        
+        }; 
+    	factory.addOrganisation = function(info,callback){
+        	$http.post('/add_organisation', info).success(function(output){
+            	callback(output);
+        	});   
+        };
+       
+    	return factory;
+    });
