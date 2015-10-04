@@ -95,11 +95,16 @@ nav {
         <h4 class="modal-title" id="myModalLabel">Login</h4>
       </div>
       <div class="modal-body">
-        ...
+        <form>
+          <label>Email</label>
+          <input type="text" ng-model="orgLogin.email"><br>
+          <label>Password</label>
+          <input type="text" ng-model="orgLogin.password">
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" ng-click="login()">Login</button>
       </div>
     </div>
   </div>
@@ -113,11 +118,30 @@ nav {
         <h4 class="modal-title" id="myModalLabel">Register</h4>
       </div>
       <div class="modal-body">
-        ...
+          <label>Name</label>
+          <input type="text" ng-model="organisation.name"><br>
+          <label>Description</label>
+          <input type="text" ng-model="organisation.description"><br>
+          <label>Address</label>
+          <input type="text" ng-model="organisation.address"><br>
+          <label>City</label>
+          <input type="text" ng-model="organisation.city"><br>  
+          <label>State</label>
+          <input type="text" ng-model="organisation.state"><br>
+          <label>Country</label>
+          <input type="text" ng-model="organisation.country"><br>
+          <label>Zipcode</label>
+          <input type="text" ng-model="organisation.zipcode"><br>
+          <label>Email</label>
+          <input type="text" ng-model="organisation.email"><br>
+          <label>Password</label>
+          <input type="text" ng-model="organisation.password"><br>
+          <label>Contact Number</label>
+          <input type="text" ng-model="organisation.contact_number">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" ng-click="register()">Register</button>
       </div>
     </div>
   </div>
