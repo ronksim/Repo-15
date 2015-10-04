@@ -1,0 +1,18 @@
+<style type="text/css">
+.kids{
+	display: inline-block;
+	vertical-align: top;
+	height: 250px;
+	width: 250px;
+	border:1px solid black;
+}
+
+</style>
+<div ng-controller = "newKidController">
+<h2> Meet the kids who need support </h2>
+<div ng-repeat="kid in kids">
+	<div class="kids">
+		<p ng-bind="kid.first_name"></p>
+		<p ng-bind="kid.last_name"></p>
+	</div>
+</div>

@@ -22,6 +22,11 @@ module.exports = function(app){
     app.post('/login',function(req,res){
      	organisations.login(req,res)
     });
+
+    app.get('/get_kids',function(req,res){
+        kids.get_kids(req,res)
+    });
+
 }
 
 

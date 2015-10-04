@@ -185,15 +185,17 @@ saburiKonnect.controller('homeController', function($scope, $location, NewOrgani
 
 })
 
-   saburiKonnect.factory('NewOrganisationFactory',function($http){
+   saburiKonnect.factory('NewOrganisationFactory',function($http,$location){
     	var factory = {};
         factory.login = function(info,callback){
             $http.post('/login', info).success(function(output){
-            	console.log(output);
                 // callback(output);
+                if (!output.error) {
+                	$location.path ("/kids")
+                }
             });
         };
-    	factory.add_Organisation = function(info,callback){
+    	factory.addOrganisation = function(info,callback){
         	$http.post('/add_organisation', info).success(function(output){
             	callback(output);
         	});
