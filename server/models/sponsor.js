@@ -2,7 +2,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var SponserSchema = new mongoose.Schema({
+var SponsorSchema = new mongoose.Schema({
   first_name: String,
   last_name : String,
   email : String,
@@ -17,6 +17,6 @@ var SponserSchema = new mongoose.Schema({
  
 });
 
-mongoose.model('Sponser', SponserSchema);
+mongoose.model('Sponsor', SponsorSchema);
 
 
