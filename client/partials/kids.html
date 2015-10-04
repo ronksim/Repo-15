@@ -10,9 +10,11 @@
 </style>
 <div ng-controller = "newKidController">
 <h2> Meet the kids who need support </h2>
+<span ng-bind="kid"></span>
 <div ng-repeat="kid in kids">
 	<div class="kids">
 		<p ng-bind="kid.first_name"></p>
 		<p ng-bind="kid.last_name"></p>
+		<a href="#/kid/{{kid}}">Click here to view more </a>
 	</div>
 </div>
