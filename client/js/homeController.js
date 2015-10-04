@@ -1,4 +1,4 @@
-saburiKonnect.controller('homeController', function($scope, $location){
+saburiKonnect.controller('homeController', function($scope, $location,NewOrganisationFactory){
 
 	$scope.year = function() {
 		console.log("clicked")
@@ -156,4 +156,32 @@ saburiKonnect.controller('homeController', function($scope, $location){
 	  $('#myInput').focus()
 	})
 
+    $scope.login = function()
+    {
+    	console.log(NewOrganisationFactory);
+    	NewOrganisationFactory.login($scope.orgLogin);
+	};
+
+	$scope.register = function()
+    {
+    	NewOrganisationFactory.addOrganisation($scope.organisation);
+    };
+
 })
+
+   saburiKonnect.factory('NewOrganisationFactory',function($http){
+    	var factory = {};
+        factory.login = function(info,callback){
+            $http.post('/login',info).success(function(output)
+            {
+                callback(output);
+            });        
+        }; 
+    	factory.addOrganisation = function(info,callback){
+        	$http.post('/add_organisation', info).success(function(output){
+            	callback(output);
+        	});   
+        };
+       
+    	return factory;
+    });
