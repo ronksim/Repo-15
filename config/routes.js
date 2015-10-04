@@ -2,6 +2,7 @@
 var kids = require('./../server/controllers/kids.js')
 var express = require('express');
 var router = express.Router();
+var passport = require('passport');
 
 var isAuthenticated = function (req, res, next) {
 	if (req.isAuthenticated())
