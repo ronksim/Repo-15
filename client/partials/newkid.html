@@ -1,59 +1,128 @@
 <meta charset="UTF-8">​
+<style type="text/css">
+
+
+
+form.outset {border-style: outset;
+                    margin-left: 525px; 
+                    padding: 15px;
+                    width: 250px;
+                    font-weight: bold;
+                    font-size: 20px;  
+                    color: #3832D4;
+                    margin-top: 3px;  
+                    text-align: center;
+                    }
+
+    input, form {
+        box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.3);
+    }
+
+button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #fff6af;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fff6af;
+	box-shadow:inset 0px 1px 0px 0px #fff6af;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffec64), color-stop(1, #ffab23));
+	background:-moz-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:-webkit-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:-o-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:-ms-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23',GradientType=0);
+	background-color:#ffec64;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#333333;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffee66;
+}
+button:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64));
+	background:-moz-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:-webkit-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:-o-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:-ms-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64',GradientType=0);
+	background-color:#ffab23;
+}
+button:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+</style>
+
+
 <div class="col-sm-8 col-sm-offset-2" ng-controller="newKidController">​
 	<!-- <p> {{orders}}</p> -->
+
+<form class= "outset"/>
+
 	<h2>Add a new Kiddo</h2>
 
-		<label>First Name</label>​
+		<label>First Name</label>​<br>
 		<input type="text" ng-model="newkid.first_name"><br> 
-		<label>Last Name </label>
+		<label>Last Name </label><br>
 		<input type="text" ng-model="newkid.last_name"><br>
-		<label>Age </label>
+		<label>Age </label><br>
 		<input type="text" ng-model="newkid.age"><br>
-		<label>Address </label>
+		<label>Address </label><br>
 		<input type="text" ng-model="newkid.address"><br>
-		<label>City </label>
+		<label>City </label><br>
 		<input type="text" ng-model="newkid.city"><br>
-		<label>State </label>
+		<label>State </label><br>
 		<input type="text" ng-model="newkid.state"><br>
-		<label>Country </label>
+		<label>Country </label><br>
 		<input type="text" ng-model="newkid.country"><br>
-		<label>Zipcode</label>
+		<label>Zipcode</label><br>
 		<input type="text" ng-model="newkid.zipcode"><br>
-		<label>Father's Name </label>
+		<label>Father's Name </label><br>
 		<input type="text" ng-model="newkid.father"><br>
-		<label>Father's Ocuupation </label>
+		<label>Father's Ocuupation </label><br>
 		<input type="text" ng-model="newkid.father_occupation">	<br>
-		<label>Father's income </label>
+		<label>Father's income </label><br>
 		<input type="text" ng-model="newkid.father_income"><br>
-		<label>Mother's Name </label>
+		<label>Mother's Name </label><br>
 		<input type="text" ng-model="newkid.mother"><br>
-		<label>Mother's Occupation </label>
+		<label>Mother's Occupation </label><br>
 		<input type="text" ng-model="newkid.mother_occupation"><br>
-		<label>Mother's income</label>
+		<label>Mother's income</label><br>
 		<input type="text" ng-model="newkid.mother_income"><br>
-		<label>Total income </label>
+		<label>Total income </label><br>
 		<input type="text" ng-model="newkid.total_income"><br>
-		<label>10th Grade Score </label>
+		<label>10th Grade Score </label><br>
 		<input type="text" ng-model="newkid.tenth_score"><br>
-		<label>12th Grade Score </label>
+		<label>12th Grade Score </label><br>
 		<input type="text" ng-model="newkid.twefth_score"><br>
-		<label>College Name </label>
+		<label>College Name </label><br>
 		<input type="text" ng-model="newkid.college_name"><br>
-		<label>Course </label>
+		<label>Course </label><br>
 		<input type="text" ng-model="newkid.course"><br>
-		<label>Proposed Expense </label>
+		<label>Proposed Expense </label><br>
 		<input type="text" ng-model="newkid.proposed_expense"><br>
-		<label>Fees Paid</label>
+		<label>Fees Paid</label><br>
 		<input type="text" ng-model="newkid.fees_paid"><br>
-		<label>Story </label>
+		<label>Story </label><br>
 		<input type="text" ng-model="newkid.description"><br>
-		<label>Hostel Accomodation </label>
+		<label>Hostel Accomodation </label><br>
 		<input type="text" ng-model="newkid.accomodation"><br>
-		<label>Organisation</label>
+		<label>Organisation</label><br>
 			<select ng-repeat="organisation in organisations">
 				<option ng-model="newKid.organisation" ng-bind="organisation.id"></option>
 			</select><br>
 				<button ng-click="addKid()">Add Kiddo</button>
+			</form>
 
 
 	
